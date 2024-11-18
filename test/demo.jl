@@ -1,11 +1,12 @@
 using Images
+using VSI
 
 # Read images
-ref = Images.load("../VSI/Julia Implementation/r0.png")
-dist = Images.load("../VSI/Julia Implementation/r1.png")
+ref = Images.load("./test/images/r0.png")
+dist = Images.load("./test/images/r1.png")
 
 # Calculate the perceptual quality score (VSI)
-@time score = VSI_score(ref, dist)
+@time score = VSI_score(ref, ref)
 
 # Output the score
 println("VSI score: ", score)
